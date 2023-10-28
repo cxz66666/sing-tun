@@ -266,7 +266,7 @@ func configure(tunFd int, ifIndex int, name string, options Options) error {
 		if len(options.Inet4Address) > 0 {
 			var routes []netip.Prefix
 			if len(options.Inet4RouteAddress) > 0 {
-				routes = append(options.Inet4RouteAddress, netip.PrefixFrom(options.Inet4Address[0].Addr().Next(), 32))
+				routes = options.Inet4RouteAddress
 			} else {
 				routes = []netip.Prefix{
 					netip.PrefixFrom(netip.AddrFrom4([4]byte{1, 0, 0, 0}), 8),
