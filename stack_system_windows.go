@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/metacubex/sing-tun/internal/winfw"
+	"github.com/cxz66666/sing-tun/internal/winfw"
 )
 
 func fixWindowsFirewall() error {
