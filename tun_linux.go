@@ -518,7 +518,7 @@ func (t *NativeTun) rules() []*netlink.Rule {
 			it.Invert = true
 			it.Dport = netlink.NewRulePortRange(53, 53)
 			it.Table = unix.RT_TABLE_MAIN
-			it.SuppressPrefixlen = 0
+			//it.SuppressPrefixlen = 0
 			it.Family = unix.AF_INET
 			rules = append(rules, it)
 			priority++
@@ -529,7 +529,7 @@ func (t *NativeTun) rules() []*netlink.Rule {
 			it.Invert = true
 			it.Dport = netlink.NewRulePortRange(53, 53)
 			it.Table = unix.RT_TABLE_MAIN
-			it.SuppressPrefixlen = 0
+			//it.SuppressPrefixlen = 0
 			it.Family = unix.AF_INET6
 			rules = append(rules, it)
 			priority6++
@@ -550,7 +550,7 @@ func (t *NativeTun) rules() []*netlink.Rule {
 				it.IifName = t.options.Name
 				it.Table = 254 //main
 				it.Family = unix.AF_INET
-				it.SuppressPrefixlen = 0
+				//it.SuppressPrefixlen = 0
 				rules = append(rules, it)
 				priority++
 			}
